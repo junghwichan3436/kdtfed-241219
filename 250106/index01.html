@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--부정선택자  속성선택자에 not을 붙임으로써 속성되어지지 않은 것들에게 적용됨-->
+    <style>
+      input:not([type="password"]) {
+        background: crimson;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="" />
+    <input type="password" name="" id="" />
+    <input type="text" name="" id="" />
+    <input type="password" name="" id="" />
+  </body>
+</html>
