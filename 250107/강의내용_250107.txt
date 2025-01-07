@@ -1,0 +1,63 @@
+CSS 속성
+1) 단위속성 : px // % // em / rem / vw // vh // max || min-width..
+2) 색상속성 : rgb // rgba // hex
+3) 가시속성 : display // visibility
+4) 박스속성 : box-sizing // margin // padding
+5) 테두리속성 : border // border-radius
+6) 배경속성 : background-color // -image // -position // -size // -repeat // attachment
+7) 폰트속성 : font-size // -weight // -style // line-height // -family
+8) 위치속성 :
+- static : 정적인 // 움직임에 대한 변수가 존재하지 않는다!!! > 어떤 태그 요소를 작성하던간에 기본적인 default position 속성은 static
+
+- relative : 상대적인 // 자식요소 중에서 position absolute가 있는 경우, 부모요소에 relative 줘야한다.
+
+- absolute : 절대적인 // 만약 부모 요소 중 그 누구도 relative 속성을 가지고 있지 않은 경우에는 최상위 루트 태그를 중심으로 절대 위치 좌표값을 갖게 된다. 하지만, 만약 부모 요소 중 relative 속성을 갖고 있다면, 해당 부모를 기준으로 절대 위치 좌표값을 갖게 됨
+
+- fixed : 고정된 // 주로 쇼핑몰 내 날개배너 같이 특정 포지션에 고정된 형태로 정보를 제공해주고자하는 경우 사용됨!!!
+
+- sticky : 끈적한 // sticker // 평상시에는 static처럼 작동하다가 특정 위치 좌표에 도착하는 순간 마치 끈끈한 스티커처럼 작동한다!!!
+
+9) float 속성 : 부유하다 // 표류하다 => 타블로이드 형식 레이아웃을 정렬해야하는 상황이 과거에는 많았음. 기사식 레이아웃 구성
+
+> 무분별한 상하좌우 정렬로 인한 반응형 페이지 대응이 쉽지 않아짐!!! => 비효율적인 코드량이 많았음!!!
+> CSS3 > flex // grid
+
+
+10) gradient 속성
+
+
+상향식 방식 : 작은 단위에서부터 큰 단위로 점진적으로 구조화!!!
+
+gnb : Global Navigation Banner
+> 제품 서비스의 메인 네비게이션 // 전역
+
+lnb : Local Navigation Banner // 지역
+
+Deployment 배포!!!
+
+Server : 타인에게 내가 만든 웹 페이지 정보를 보여주기 위해서 원격의 공간 // 사적인 공간(나만 볼 수 있는 공간)에 저장을 해야하는 데, 그 공간을 서버!!!
+
+
+- Google Firebase
+- git-hub & netlify
+
+- dothome(*무료 서버 임대) // FTP = File Tranfer Protocol
+- cafe24 // 네이버 1대 주주
+
+- fly.io
+- Heroku
+- prisma
+....
+
+Hosting : 로컬 컴퓨터에 있는 Data를 Sever로 전달하도록 하는 행위
+
+1.Node.js
+
+
+
+
+
+
+
+
+
