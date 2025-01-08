@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 960px;
+        height: 100vh;
+        margin: 0 auto;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 154, 158, 0.5),
+            rgba(250, 208, 196, 0.5)
+          )
+          no-repeat;
+      }
+
+      main {
+        /* display: flex; */
+        /* overflow: hidden; */
+        display: grid;
+        grid-template-columns: 200px 1fr;
+      }
+
+      aside {
+        /* width: 200px; */
+        /* float: left; */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Header</h1>
+    </header>
+    <nav>
+      <h1>Navigation</h1>
+    </nav>
+    <main>
+      <aside>
+        <h1>Aside</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa illo,
+          nobis excepturi officia, mollitia debitis tempore quis nulla
+          voluptatem veniam sapiente minima ratione, dolore deleniti adipisci
+          possimus facilis pariatur atque?
+        </p>
+      </aside>
+      <section>
+        <h1>Section</h1>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit optio
+          ipsa esse. A animi optio pariatur, aliquam minus rem in excepturi
+          molestias, saepe dolorum recusandae. At porro dignissimos fugit
+          nesciunt.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <h1>Footer</h1>
+    </footer>
+  </body>
+</html>

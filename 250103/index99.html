@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* h1 {
+        background: crimson; */
+      /* } */
+      p {
+        color: brown;
+        &#special {
+          color: dodgerblue;
+        }
+      }
+      li {
+        &#second {
+          background-color: aqua;
+        }
+        &#fourth {
+          background-color: aquamarine;
+        }
+      }
+      .bgstyle {
+        background-color: crimson;
+      }
+      #listEx {
+        #firstli + li {
+          color: crimson;
+        }
+        #firstli ~ li {
+          font-size: 30px;
+        }
+      }
+      input {
+        &[type="text"] {
+          background: crimson;
+        }
+        &[type="password"] {
+          background: green;
+        }
+      }
+      #header {
+        /* h1 {
+          color: brown;
+        } */
+        & > h1 {
+          color: brown;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>오늘은 신나는 금요일</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, sint
+      laborum. Modi doloremque ipsam veniam ut hic nostrum at, corporis nemo
+      debitis sint blanditiis cupiditate qui. Ratione pariatur aperiam ut.
+    </p>
+    <p id="special">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum explicabo
+      fuga nulla animi minus placeat dignissimos earum, eaque enim officiis,
+      quisquam tempora. Consectetur maxime fugiat, beatae quas odit minus ipsam?
+      Suscipit eligendi culpa, porro nesciunt perferendis officiis maiores
+      adipisci molestiae, aut deleniti dolorem asperiores inventore alias autem
+      eius possimus earum? Necessitatibus ullam eos fugit voluptatibus
+      asperiores praesentium consequatur blanditiis. Nobis. Porro eos sint alias
+      sequi officia, voluptas quam labore optio enim modi praesentium provident,
+      ratione libero, eveniet mollitia error. Ducimus itaque delectus corrupti
+      officiis fugit repudiandae minus iste tempora et?
+    </p>
+    <ul>
+      <li>첫번째</li>
+      <li id="second">두번째</li>
+      <li>세번째</li>
+      <li id="fourth">네번째</li>
+    </ul>
+    <ul>
+      <li>첫번째</li>
+      <li class="bgstyle">두번째</li>
+      <li>세번째</li>
+      <li class="bgstyle">네번째</li>
+    </ul>
+    <ul id="listEx">
+      <li id="firstli">첫번쨰</li>
+      <li>두번째</li>
+      <li>세번째</li>
+      <li>네번째</li>
+    </ul>
+    <hr />
+    <form action="">
+      <input type="text" name="" id="" /><input type="password" name="" id="" />
+    </form>
+    <hr />
+    <div id="header">
+      <h1 class="title">lorem ipsum</h1>
+      <div id="nav">
+        <h1>Navigation</h1>
+      </div>
+    </div>
+  </body>
+</html>
