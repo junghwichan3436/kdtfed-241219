@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- transition 배우기 -->
+    <!-- A가 B로 변경되는 순간을 제어할 수 있도록 하는 속성 -->
+    <!-- 얼만큼 ll천천히 ll빨리 어느 정도의 시간동안....ll 어느 정도의 시간을 ll기다렸따가....ll 어느 정도의 가속도로 ll 어떤 감속으로.... -->
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+        font-weight: bold;
+        /* transition은 반응 속성자 위에 쓰기 */
+        /* transition
+        transition-duration: ;
+        얼마의 시간동안 상태변화를 진행되도록 할 것이냐
+        transition-property: ;
+        어떤 속성 요소에 상태변화를 적용할 것 인가!
+        transition-timing-function: ;
+        어떤 가속,감속을 적용 할 것인가
+        transition-delay: ; */
+        /* 얼마의 지연 후 상태변화를 진행하게 할 것인가 */
+        /* 마우스를 오버했을떄 */
+        &:hover {
+          width: 200px;
+          height: 300px;
+        }
+        /* 마우스를 클릭했을떄 */
+        &:active {
+          background: tomato;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">1</div>
+  </body>
+</html>
