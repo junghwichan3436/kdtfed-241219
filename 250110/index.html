@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      /* animation */
+      /* 절대위치 좌표값을 부모요소에게 주어야한다 */
+      /* 옛날 책에서 졸라맨 그려서 넘기면 움직이는 것(animation)처럼 보이는것 */
+      #box {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 200px;
+        color: #fff;
+
+        /* 무한으로 애니메이션돌리기 */
+        /* animation-duration: 실제 실행하고자 하는 애니메이션의 가속도를 어떻게 설정 */
+        /* animation-iteration-count: 애니메이션의 반복횟수 */
+        /* animation-direction: 애니메이션의 진행방향을 결정 (default=일방통행//반대로도 실행) */
+        /* animation-play-state: 애니메이션의 실행상태를 제어할 때 사용; */
+        /* animation-delay: 얼마의 시간 이후에 애니메이션을 실행시킬 것인가 */
+        /* animation: circle;
+        animation-duration: 2s;
+        animation-timing-function: linear; */
+        /* animation-iteration-count: infinite;
+        animation-direction: alternate; */
+        animation: circle 2s linear none infinite alternate;
+        &:hover {
+          animation-play-state: paused;
+        }
+        h1 {
+          text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      @keyframes circle {
+        from {
+          left: 0;
+          transform: rotate(0deg);
+        }
+
+        50% {
+          left: 500px;
+        }
+        to {
+          left: 500px;
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <h1>Rotation</h1>
+    </div>
+  </body>
+</html>

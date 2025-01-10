@@ -1,0 +1,200 @@
+/* font */
+@import url(https://fonts.googleapis.com/css2?family=Poiret+One&display=swap);
+
+/* reset */
+@import url("./styles/reset.css");
+
+/* variables */
+@import url("./styles/variables.css");
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: var(--main-bg-color);
+  font-style: 16px;
+  overflow: hidden;
+  animation: sky 20s linear none infinite;
+}
+/* contents */
+h1 {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 150%);
+  color: var(--main-light-color);
+  font: normal 5.75rem/1 var(--poiret-font-style);
+}
+main {
+  width: 1000px;
+  height: 400px;
+  /* 상위부모가 하나니까 부모에게 relative를 주지않음 */
+  position: absolute;
+  /* 기준점이 왼쪽 상단 꼭짓점에 있으니까 정가운데 중심으로오지 않는다 */
+  /* display: flex;써보기 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  border: 1px var(--main-dark-color);
+  .sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .sun {
+      /* absolute는안쪽으로 파고드는 것이 음수 바깥으로 나가는 것이 양수??? */
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      margin-left: -100px;
+      /* 중심점을 바꾸어주는 코드 */
+      transform-origin: center 500px;
+      animation: sun 20s linear none infinite;
+    }
+    .cloud1 {
+      position: absolute;
+      top: -30px;
+      left: 10%;
+      animation: flow 10s linear none infinite;
+    }
+    .cloud2 {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      animation: flow 20s linear none infinite;
+    }
+  }
+  .town {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .circle {
+      position: absolute;
+      bottom: 104px;
+      left: 50%;
+      margin-left: -165px;
+      opacity: 0.7;
+      animation: rotation 20s linear none infinite;
+    }
+    .night {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+    }
+    .day {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+      animation: day 20s linear none infinite;
+    }
+  }
+  .people {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: day 20s linear none infinite;
+    .man {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: flow 7s linear none infinite;
+    }
+    .family {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: flow 20s linear none infinite;
+    }
+  }
+}
+
+@keyframes sun {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  25% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(+45deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+}
+@keyframes flow {
+  0% {
+    opacity: 0;
+    left: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    left: 90%;
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes day {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sky {
+  0% {
+    background: #b08fcc;
+  }
+  25% {
+    background: #b1e1e2;
+  }
+  50% {
+    background: #fcd2e2;
+  }
+  75% {
+    background: #636888;
+  }
+  100% {
+    background: #b08fcc;
+  }
+}
