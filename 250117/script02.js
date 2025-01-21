@@ -6,13 +6,14 @@
 // console.log(a, b);
 // 객체영역이 바뀌면 변수영역 값도 바뀐다 그전사람이 검색했던 결과도 남이 있어서 다른 사람이 볼 수도 있다 그래서 값이 바뀌지 않게 해주는 함수
 // 참조타입 :객체 영역에 있는 타입을 참조해온다
-// let obj1 = {
-//   c: 10,
-//   d: "ddd",
-// };
+let obj1 = {
+  c: 10,
+  d: "ddd",
+};
 
-// let obj2 = obj1;
+let obj3 = obj1;
 
+console.log(obj3, obj1);
 // console.log(obj1, obj2);
 
 // b = 15;
