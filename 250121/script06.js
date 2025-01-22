@@ -138,17 +138,17 @@ obj.a;
 //   console.log(this);
 // });
 
-const obj1 = {
-  outer: function () {
-    console.log(this);
-    const innerFunc1 = function () {
-      console.log(this);
-    };
-    innerFunc1();
-    const self = this;
-    const innerFunc2 = function () {
-      console.log(self);
-    };
-    innerFunc2();
-  },
-};
+// const obj1 = {
+//   outer: function () {
+//     console.log(this);
+//     const innerFunc1 = function () {
+//       console.log(this);
+//     };
+//     innerFunc1();
+//     const self = this;
+//     const innerFunc2 = function () {
+//       console.log(self);
+//     };
+//     innerFunc2();
+//   },
+// };

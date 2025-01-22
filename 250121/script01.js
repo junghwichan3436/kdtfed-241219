@@ -6,7 +6,7 @@
 // 예외 조항 처리
 
 // if (userInput === "" || userInput === null) {
-//   console.log("값이 없습니다");
+//   alert("값이 없습니다");
 // } else {
 //   alert(`${userInput}님 좋은 아침이에요`);
 // }
@@ -25,16 +25,16 @@
 
 // 짝수 & 홀수 구분하는 if 조건문!!
 
-// let userNumber = prompt("숫자를 입력하세요!");
+let userNumber = prompt("숫자를 입력하세요!");
 
-// if (userNumber !== "" || userNumber !== null) {
-// userNumber = parseInt(userNumber);
-// if (userNumber % 2 === 0) {
-//   alert(`${userNumber} 짝수 입니다!`);
-// } else {
-//   alert(`${userNumber}는 홀수 입니다!`);
-// }
-// }
+if (userNumber !== "" || userNumber !== null) {
+  userNumber = parseInt(userNumber);
+  if (userNumber % 2 === 0) {
+    alert(`${userNumber} 짝수 입니다!`);
+  } else {
+    alert(`${userNumber}는 홀수 입니다!`);
+  }
+}
 
 // 삼항 조건 연산자
 // let userNumber = prompt("숫자를 입력하세요!");
@@ -47,24 +47,24 @@
 // 실행컨테스트, 호이스팅
 // 스위치문
 //브레이크를 걸어주어야 제일 나중에 쓴 값을 끌어오지 않는다
-const webPage = prompt("네이버,구글,다음 중 즐겨사용하는 사이트는 어디인가요?");
-let url;
+// const webPage = prompt("네이버,구글,다음 중 즐겨사용하는 사이트는 어디인가요?");
+// let url;
 
-switch (webPage) {
-  case "네이버":
-    url = "https://www.naver.com";
-    break;
-  case "구글":
-    url = "https://www.google.com";
-    break;
-  case "다음":
-    url = "https://www.daum.net";
-    break;
-  default:
-    alert("보기중에 존재하지 않는 사이트 입니다");
-}
+// switch (webPage) {
+//   case "네이버":
+//     url = "https://www.naver.com";
+//     break;
+//   case "구글":
+//     url = "https://www.google.com";
+//     break;
+//   case "다음":
+//     url = "https://www.daum.net";
+//     break;
+//   default:
+//     alert("보기중에 존재하지 않는 사이트 입니다");
+// }
 
-// 이동시키는 역할을 한다
-if (url) {
-  window.location.href = url;
-}
+// // 이동시키는 역할을 한다
+// if (url) {
+//   window.location.href = url;
+// }

@@ -21,7 +21,7 @@
 // for()
 // forEach()
 
-const marvels = ["ironman", "hulk", "captin", "stranger"];
+// const marvels = ["ironman", "hulk", "captin", "stranger"];
 
 // for(let i = 0; i < marvels.length; i++) {
 //   console.log(marvels[i]);
@@ -29,6 +29,6 @@ const marvels = ["ironman", "hulk", "captin", "stranger"];
 
 //콜백 = call back 함수
 
-marvels.forEach(function (marvel, index, array) {
-  console.log(marvel, index, array);
-});
+// marvels.forEach(function (marvel, index, array) {
+//   console.log(marvel, index, array);
+// });
