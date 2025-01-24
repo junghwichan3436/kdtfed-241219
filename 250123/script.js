@@ -180,29 +180,29 @@
 
 // ---------------------------------------------
 //블록 스코프
-// const factor = 5;
+const factor = 5;
 
-// function calc() {
-//   return num * factor;
-// }
+function calc() {
+  return num * factor;
+}
 
-// const num = 10;
-// let result = calc();
-// console.log(`result : ${result}`);
+const num = 10;
+let result = calc();
+console.log(`result : ${result}`);
 // ---------------------------------------------
 // const 와 let을 block local script global안에 있을 수있다
 //(let i = 1; i <= n; i++) i는 block 변수
 //  let sum = 0; let 은  local 변수
 // const num = 5; script 변수
 // var로 변수 선언을 하면 윈도우로 들어가서 global 변수
-function calcSum(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    sum += i;
-  }
-  return sum;
-}
+// function calcSum(n) {
+//   let sum = 0;
+//   for (let i = 1; i <= n; i++) {
+//     sum += i;
+//   }
+//   return sum;
+// }
 
-const num = 5;
+// const num = 5;
 
-console.log(`1부터 ${num}까지 더한 결과값은 ${calcSum(sum)}입니다.`);
+// console.log(`1부터 ${num}까지 더한 결과값은 ${calcSum(sum)}입니다.`);
