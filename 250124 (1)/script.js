@@ -48,7 +48,8 @@
 // 약속 = promise // ES6 = 2015년
 //만약에 어떤 데이터를 가져오는데 문제가 없으면 A를 출력해줘, 그런데 만약에 문제 생겨서 오류 및 에러가발생하면 B를 출력해줘 라고 약속!
 // 약속한 실행문  지켜보고 있다가 나중에 실행해줌
-
+// promise함수
+// 약속선언
 const addCoffe = (name) => {
   return (prevName) => {
     return new Promise((resolve) => {
@@ -60,6 +61,7 @@ const addCoffe = (name) => {
     });
   };
 };
+// 약속실행
 addCoffee("에스프레소")()
   .then(addCoffee("카페모카"))
   .then(addCoffee("카페라떼"))
