@@ -26,7 +26,7 @@ const boolArr01: boolean[] = [true, false, true];
 const boolArr02: Array<boolean> = [true, false, true];
 // 배열 안의 값이 한가지가 아닐때
 // | 한가지가 아니라 두가지다 의미한다
-// const multiArr = [1, "hello"];
+// const multiArr = [1, "hello"]
 // 합집합의 방식으로 배열을 쓴다
 const multiArr: (number | string)[] = [1, "hello"];
 // 중첩배열일떄
@@ -36,8 +36,9 @@ const doubleArr: (number | string)[][] = [[1, "2", 3], [4, 5], [6]];
 // 큐플
 // 같은 타입을 받지만 이건 튜플타입이라고 부른다
 // 비효율적인 배열을 사용하지 않기 위해 사용된것
-const tup1: [number, number] = [1, 2];
-// tup1 = [1, 2];
+let tup1: [number, number] = [1, 2];
+tup1 = [1, 2];
+console.log(tup1);
 
 // 깊은비교같이 하나하나 다맞아야한다
 let tup2: [number, string, boolean] = [1, "Hello", true];
