@@ -1,9 +1,12 @@
 const playButton = document.querySelector(".play-pause");
+const player = document.querySelector("#music-player");
 const video = document.querySelector("video");
 const progressCover = document.querySelector(".progress");
 const volumeBar = document.querySelector("input[type='range']");
 const fullButton = document.querySelector(".fullscreenBtn");
 const rateButtons = document.querySelectorAll(".rate");
+
+console.log(player);
 
 const play = () => {
   playButton.innerText = "||";
@@ -64,12 +67,24 @@ const setRate = (e) => {
   const { rate } = e.target.dataset; // 구조 분해 할당
   video.playbackRate = rate; // 영상의 재생속도를 관여한다.
 };
+//  e는 참조변수
+const videoPoint = (e) => {
+  // console.log(e.pageX);
+  // console.log(player.offsetLeft);
+  //영상의 총시간중 몇퍼센트인지 알야내기
+  const mouseX = e.pageX - player.offsetLeft; // 페이지 의 x길이에 서 영상의 앞의 길이를 빼준다
+  const progressBarWidth = progressCover.clientWidth; //
+  const duration = video.duration; // 영상의 총길이
+  const clickedTime = (mouseX / progressBarWidth) * duration;
+  video.currentTime = clickedTime;
+};
 
 playButton.addEventListener("click", togglePlay);
-video.addEventListener("click", togglePlay);
+video.addEventListener("pointerdown", togglePlay);
 video.addEventListener("timeupdate", updateTime);
 video.addEventListener("timeupdate", updateProgress);
 volumeBar.addEventListener("change", setVolume);
+progressCover.addEventListener("click", videoPoint);
 
 rateButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
@@ -79,4 +94,14 @@ rateButtons.forEach((button) => {
 
 fullButton.addEventListener("click", () => {
   video.requestFullscreen();
+});
+//버그 수정
+// 우리가 어떤 소스를 full화면으로 보게 된다면 실행하는 이벤트
+document.addEventListener("fullscreenchange", () => {
+  if (document.fullscreenElement) {
+    // 클릭이벤트가 작동하지 않는 선까지 세밀하게 작동시키는 이벤트 pointerdown
+    document.addEventListener("pointerdown", togglePlay);
+  } else {
+    document.removeEventListener("pointerdown", togglePlay);
+  }
 });

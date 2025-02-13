@@ -70,6 +70,7 @@ html body {
   align-items: center;
 }
 #inner-left .inner-left-body .left-body-title .title-img {
+  margin-top: 10px;
   width: 100%;
   height: 133px;
   border: 1px solid #708aa8;
@@ -91,7 +92,7 @@ html body {
   display: flex;
   align-items: center;
   gap: 6px;
-  cursor: pointer;
+  color: crimson;
 }
 #inner-left .inner-left-body .left-body-footer .footer-feel {
   display: flex;

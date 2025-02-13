@@ -33,7 +33,7 @@ switch (day1) {
     break;
 }
 
-displayDate.innerText = `${year}년 ${month}월 ${date}일 ${day1}요일`;
+displayDate.innerText = `${year}년 ${month}월 ${date}일 ${day2}`;
 
 const clock = () => {
   const current = new Date();
@@ -47,7 +47,7 @@ const clock = () => {
 
   let period = "AM";
   if (hrs === 0) {
-    her = 12;
+    hrs = 12;
   } else if (hrs > 12) {
     hrs = hrs - 12;
     period = "PM";
@@ -57,3 +57,4 @@ const clock = () => {
   // 한자리 두자리 왔다갔다 하면 이쁘지 않기때문에
 };
 setInterval(clock, 1000);
+// setINterval 클락이라는 함수를 1 초마다 실행해라

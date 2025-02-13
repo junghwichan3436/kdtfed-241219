@@ -19,7 +19,7 @@
 
 //Class를 통해서 만들어진 해당 모델 => Prototype이라고 부름
 
-// new Date();
+new Date();
 
 // array는 내장 프로토타입이라고 부를 수 있따
 let arr = new Array();
