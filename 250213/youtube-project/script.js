@@ -20,7 +20,7 @@ window.addEventListener("scroll", () => {
 // 586 스크롤자체 컨텐츠 너비
 // 226 스크롤이 가능하도록 하기위해서 준 여백의 공간
 // 812 전체공간 확보
-
+// ------------------------------------
 const hashContent = document.querySelector(".hashcontent");
 const listClientWidth = hashContent.clientWidth;
 // 스크롤 할 수 있는 여백 만들기 586+226
