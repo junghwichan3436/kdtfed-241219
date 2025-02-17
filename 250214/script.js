@@ -22,7 +22,7 @@ value에 입력될 수 있는 값의 형태는 숫자,문자만 가능한가?
 객체의 특정 key안에 value 값으로 입력된 자료의 형태가 함수인 경우에는 별도의 용어를 사용합니다!!
 
 특정객체안에 들어올 값이 함수일 경우에 method 라고 부른다
-method = 메서드 = 방법 => 우리가 그동안 사용했던 
+method = 메서드 = 방법 => 우리가 그동안 사용했던
 
 뒤에 소괄호가 붙으면 함수
 querySelector() => 함수       =     document.querySelector(document라는 객체의 함수)
@@ -38,31 +38,37 @@ window.document.querySelector())
 // 한쌍의 프로퍼티가 있고
 //안에 key와 value 의 값이 있다?
 
-// let obj1 = new Object();
+let obj1 = new Object();
 
-// console.log(obj1);
+console.log(obj1);
 
 // // property에 값을 넣어주려고할때 대괄호 온점 표기법 사용
 // // 온점표기법 방식
-// obj1.name = "David";
-// console.log(obj1);
+obj1.name = "David";
+console.log(obj1);
 
-// obj1.gender = "male";
-// console.log(obj1);
+obj1.gender = "male";
+console.log(obj1);
 
 // //대괄호 표기법
-// obj1["gender"] = "male";
-// console.log(obj1);
+obj1["gender"] = "female";
+console.log(obj1);
 // // 객체.키 = 값
-// obj1.name = "Romeo";
-// console.log(obj1);
+obj1.name = "Romeo";
+console.log(obj1);
 // // 객체안에 있는 키는 마치 변수처럼 움직인다
 // // 변수의 값이 재할당 되어진것과 같이
+
+obj1["hair"] = "brown";
+console.log(obj1);
 
 // // 객체안에 값 삭제
 // // 예약어
 // delete obj1.name;
 // console.log(obj1);
+
+delete obj1.hair;
+console.log(obj1);
 
 // 객체안에 들어갈 값이 명확하다면 굳이 프로퍼타입을 사용하지 않고 값을넣어주면 된다
 // 값에 따라 변수 객체 등을로 변한다 (대괄호 표기법 = 객체)
@@ -80,9 +86,9 @@ const student = {
     },
   },
 };
+console.log(student.score.average());
 // 객체 안에 키안에 키가 있기 때문에 값을 찾아올 수 있따
 //            함수뒤에 소괄호
-console.log(student.score.average());
 
 const book3 = {
   title: "누구나 처음은 있다",

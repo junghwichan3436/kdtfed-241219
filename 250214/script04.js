@@ -23,7 +23,7 @@
 const bag = {
   type: "backpack",
   color: "blue",
-  pricle: 30000,
+  price: 30000,
 };
 // 키를 찾아왔따는 건 value값을 찾아왔다는 것고ㅏ 같다
 for (let key in bag) {

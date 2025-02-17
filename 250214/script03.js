@@ -36,14 +36,14 @@ const button = document.querySelector("input[type='button']");
 const result = document.querySelector("#result");
 
 // 생성자함수
-// function Cylinder(cylinderDiameter, cylinderheight) {
-//   this.diameter = cylinderDiameter;
-//   this.height = cylinderheight;
-//   this.getVolume = function () {
-//     const radius = this.diameter / 2;
-//     return (Math.PI * radius * radius * this.height).toFIxed(2);
-//   };
-// }
+function Cylinder(cylinderDiameter, cylinderheight) {
+  this.diameter = cylinderDiameter;
+  this.height = cylinderheight;
+  this.getVolume = function () {
+    const radius = this.diameter / 2;
+    return (Math.PI * radius * radius * this.height).toFIxed(2);
+  };
+}
 
 //  class로 바꾸기
 class Cylinder {

@@ -20,6 +20,7 @@ newBook.question();
 //객체를 생성할려고한다
 // book이 만들려고 하는 객체를 칭한다 this는
 // book은 객체를 생성하기 위한 생성자함수
+// 생성자 함수를 만든것
 function Book(title, page, price, author, published) {
   this.title = title;
   this.page = page;
