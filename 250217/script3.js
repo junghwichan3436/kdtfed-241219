@@ -56,6 +56,6 @@ button.addEventListener("click", () => {
     userName = userName.slice(0, userName.length - half);
 
     result.innerText = `${userName}***@${domain}`;
-    email.value = "";
+    email.value = ""; // 클릭했을 떄 이메일이 지워지고 다시 빈칸이 생기게할려고
   }
 });

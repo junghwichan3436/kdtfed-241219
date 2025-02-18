@@ -5,6 +5,7 @@ const token_timer_confirm_button = document.querySelector(
 );
 
 let interval;
+
 token_timer_confirm_button.addEventListener("click", (e) => {
   e.preventDefault();
   clearInterval(interval);
