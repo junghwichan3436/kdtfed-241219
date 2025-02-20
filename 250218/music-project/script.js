@@ -5,11 +5,11 @@ const figure = document.querySelector("figure");
 const loading = document.querySelector(".loading");
 // 브라우저에서 쓸수 있게 변환 해주어야한다 fetch 로 받아오는 거가능
 // then 정상적으로 작동했다면 실행
-//then 은 자기 역할 이끝나면 뒤로 토스한다
+//then은 자기 역할이 끝나면 뒤로 토스한다
 //catch 데이터를 못찾아 왔다면 실행
 //메서드 체인잉 깃법이라고 부름(체인 처럼 연결 되어 있어서)
 //객체형태로 바꾸어 주어야한다
-//git허브에 바로 옹ㄹ리면 아이디값에있는 개인정보까지 들어가기 때문에 환경변수를 만들어준다
+//git허브에 바로 올릴리면 아이디값에있는 개인정보까지 들어가기 때문에 환경변수를 만들어준다
 fetch(getImg)
   .then((response) => response.json())
   .then(({ urls: { full } }) => {
