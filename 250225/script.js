@@ -1,17 +1,17 @@
 //함수 매개변수
-const hello = (fuck, message) => {
-  console.log(`${fuck}님, ${message}`);
-};
+// const hello = (fuck, message) => {
+//   console.log(`${fuck}님, ${message}`);
+// };
 
-hello("슛돌이", "반갑습니다");
+// hello("슛돌이", "반갑습니다");
 
 //함수 매개변수 -2
 //기본 매개변수 값 정의!!
-const hello01 = (fuck, message = "안녕하세요") => {
-  console.log(`${fuck}님, ${message}`);
-};
+// const hello01 = (fuck, message = "안녕하세요") => {
+//   console.log(`${fuck}님, ${message}`);
+// };
 
-hello("슛돌이");
+// hello("슛돌이");
 
 //함수 매개변수 정의 -3
 //나머지 매개변수 정의방법 => ...변수명
@@ -35,11 +35,11 @@ addNum(1, 2, 3, 4, 5);
 //전개연산자 구문이 함수의 매개변수에서 사용되면 나머지 매개변수라고 특정한 명칭을 갖게 됨!
 // 원본데이터를 복사하고 싶을때 사용한다 원본데이터와 사본데이터를 분리하고 싶을때
 
-const animal = ["bird", "cat"];
+// const animal = ["bird", "cat"];
 const fruits = ["apple", "banana", "cherry"];
 
-console.log(animal.concat(fruits));
-console.log(...animal, ...fruits);
+// console.log(animal.concat(fruits));
+// console.log(...animal, ...fruits);
 
 // //전개연산자 구문 사용법 -2
 // const mine = fruits;
@@ -64,6 +64,7 @@ const book = {
 //온점 표기법
 console.log(book);
 book.published = "2025-03";
+book.pages = 600;
 
 // 대괄호표기법
 book["author"] = "David";
@@ -74,6 +75,7 @@ console.log(book);
 //계산된 프로퍼티 값을 추가하는 방법
 const add02 = (a, b) => {
   return a + b;
+  d;
 };
 
 const fn = () => {
