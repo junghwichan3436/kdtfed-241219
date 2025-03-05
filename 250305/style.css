@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+}
+
+#result {
+  color: #49340d;
+  border: 1px solid #a0d40f;
+  border-radius: 18px;
+  padding: 20px;
+}
+#result .quote {
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+#result .author {
+  font-size: 1.8rem;
+  font-style: italic;
+}
