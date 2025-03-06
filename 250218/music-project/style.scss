@@ -115,6 +115,7 @@ figure {
         transform: scale(0.8);
         transition: opacity 1s, transform 1s;
         .pic {
+          top: -20px;
           width: 15vw;
           height: 15vw;
           border: 1px solid #ccc;
@@ -133,7 +134,7 @@ figure {
             height: inherit;
             border-radius: 50%;
             position: absolute;
-            top: 0;
+            // top: -15px;s
             left: 0;
             background-image: inherit;
             background-position: inherit;
@@ -141,6 +142,7 @@ figure {
             background-repeat: inherit;
           }
           &::before {
+            // top: -20px;
             content: "";
             transform: translateY(10%);
             filter: blur(20px) brightness(1.6);
@@ -152,6 +154,7 @@ figure {
             animation: ani2 4s linear infinite;
           }
           .dot {
+            // top: -20px;
             width: 3vw;
             height: 3vw;
             background: map-get($map: $color, $key: dot);
@@ -171,6 +174,10 @@ figure {
             font-size: 1.2rem;
             margin: 2vh 0 3vh;
             color: map-get($map: $color, $key: desc);
+            width: 160px;
+            // white-space: nowrap;
+            height: 100px;
+            text-overflow: ellipsis;
           }
           ul {
             display: flex;

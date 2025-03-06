@@ -48,21 +48,30 @@ lists.forEach((list) => {
       .classList.contains("on");
     // 다른 것들은 재생이 되어지지 않는다
     if (isActive) {
-      const activePic = e.currentTarget.cloest("article").querySelector(".pic");
+      const activePic = e.currentTarget
+        .closest("article")
+        .querySelector(".pic");
 
       const activeAudio = e.currentTarget
         .closest("article")
         .querySelector("audio");
 
-      e.currentTarget //여기서 currentTarget은 li가 된다
-        .closest("article")
-        .querySelector(".pic")
-        .classList.add("on");
-      //ended 이벤트 음원이 종료된다면
-      e.currentTarget
-        .closest("article")
-        .querySelector("audio")
-        .addEventListener("ended", () => {});
+      // e.currentTarget //여기서 currentTarget은 li가 된다
+      //   .closest("article")
+      //   .querySelector(".pic")
+      //   .classList.add("on");
+      // //ended 이벤트 음원이 종료된다면
+      // e.currentTarget
+      //   .closest("article")
+      //   .querySelector("audio")
+      //   .addEventListener("ended", () => {});
+
+      activePic.classList.add("on");
+      activeAudio.play();
+
+      activeAudio.addEventListener("ended", () => {
+        activePic.classList.remove("on");
+      });
     }
   });
 
@@ -70,6 +79,7 @@ lists.forEach((list) => {
     const isActive = e.currentTarget
       .closest("article")
       .classList.contains("on");
+
     if (isActive) {
       e.currentTarget
         .closest("article")
@@ -84,6 +94,7 @@ lists.forEach((list) => {
     const isActive = e.currentTarget
       .closest("article")
       .classList.contains("on");
+
     if (isActive) {
       e.currentTarget
         .closest("article")
