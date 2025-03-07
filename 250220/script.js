@@ -20,18 +20,21 @@
 //내장객체 > class 혹은 생성자 함수로 만들어졌다
 //new라는 예약어를 쓴다
 
-// let str = "ES2025 is powerfu/l";
+// let str = "ES2025 is powerfull";
 // const pattern = /ES2025/;
 // match라는 함수
 // console.log(str.match(/i/)); //ES6 라는 패턴을 만든것!!
 // console.log(str.match(/ES6/));
 // console.log(str.replace(pattern, "Love")); // ES2025라는 패턴을 Love로 바꾸어준다는 함수 replace
-// str.replace(pattern,"Love")
+// str.replace(pattern, "Love");
 
 // const str = "Love is Powerful!";
 
 // const pattern = /love/i; // true를 반환한다 i 는 international 전역에서 가져와 서 대문자와 소문자를 구분하지 않는다
 // const pattern = /love/; // false를 반환한다 대문자가 아니기 때문에
+// console.log(pattern.test(str));
+// const pattern = /love/i;
+// console.log(str.match(pattern));
 
 // pattern.test(str);
 // console.log(pattern.test(str));
@@ -40,17 +43,17 @@
 // const str = "Love is Power777!";
 
 // const pattern = /Power\d{1}/; // 숫자 7하나를 찾아온다 {3}으로 바꾸어주면 3개를 찾아온다
-// const pattern = /Power\d\d\d/; 이러한 방법도 있다
-
+// const pattern = /Power\d\d\d/; // 이러한 방법도 있다
+// const pattern = /Power\d{2}/;
 // console.log(str.match(pattern));
 // console.log(pattern.test(str)); // ????????
 
-// const hello = "hello, everyone.";
+const hello = "hello, everyone.";
 
-// const pattern = /^H/i;
+const pattern = /^H/i;
 // const pattern = /One.$/i; // 해당 문자열 이 이걸로 끝나냐 안 끝나냐 $
 
-// console.log(pattern.test(hello));
+console.log(pattern.test(hello));
 // one.으로 끝나는거
 
 // console.log(/one.$/.test(hello));
@@ -65,7 +68,7 @@
 const str = "Ooooops";
 
 console.log(str.match(/o/)); //2개이상이면서 4개까지인 문자를 찾아온다
-console.log(str.match(/o{2,}/i)); //2개이상값을 찾아온다
+console.log(str.match(/o{2,6}/i)); //2개이상값을 찾아온다
 
 const number = /^[0-9]+$/; //v패턴인데 0~9까지고 숫자가아닌 값을 찾아오는 데
 // 숫자가 몇자이든 상관없고 $는 이러한 형태의 패턴으로 반복한후 종료가 된다

@@ -9,8 +9,8 @@
 // const pets = ["dog", "cat", "mouse"];
 
 // //3) 배열을 생성하는 방법
-// const fruits = new Array("사과", "복숭아", "포도");
-// console.log(fruits);
+const fruits = new Array("사과", "복숭아", "포도");
+console.log(fruits);
 
 // // 배열의 아이템에 접근 후 값변경!!
 // pets[2] = "hamster";
@@ -28,10 +28,10 @@
 //3개: 개별아이템,인덱스 , 배열 그 자체
 
 // 1개의 인자값
-// const animals = ["lion", "bear","bird"]
+// const animals = ["lion", "bear", "bird"];
 // animals.forEach((animal) => {
 //   console.log(animal);
-// })
+// });
 
 // 2개의 인자값
 // const animals = ["lion", "bear", "bird"];
@@ -66,9 +66,9 @@
 // console.log(meatBurger);
 
 // const meatBurger = vegetable.concat(meat);
-// console.log(meatBurger);
 
 // const meatBurger = [vegetable, meat];
+// console.log(meatBurger);
 
 // ----------------------------------------------------
 
@@ -88,15 +88,17 @@
 // console.log(week.sort());
 
 // const values = [5, 20, 3, 11, 4, 15]; //3 4 5 11 15 20 이렇게 나와야 되는데!!
+// const values = [3, 7, 1, 4, 5];
 // //우리 눈에는 숫자처럼 보이지만 사실은 문자열이다
+// console.log(values.sort());
 // console.log(
 //   values.sort((a, b) => {
-//     // if (a > b) return 1;
-//     // if (a < b) return -1;
-//     // if (a === b) return 0;
-//     //위아래가같다
+//     if (a > b) return 1;
+//     if (a < b) return -1;
+//     if (a === b) return 0;
+//     //     //위아래가같다
 //     return a - b; //이렇게 쓰면 오름차순 정렬이된다!!!!!!!!!!!!
-//     // return b - a; // 이렇게 쓰면 내림차순 정렬이 된다!!!!!!!!!!!
+//     return b - a; // 이렇게 쓰면 내림차순 정렬이 된다!!!!!!!!!!!
 //   })
 // );
 
@@ -105,23 +107,23 @@
 // -----------------------------------------------------------
 
 // 4.pop(), push() :배열 안에 맨 뒤쪽부터 값을 제거하거나 혹은 추가하고자 할 때 사용가능한 메서드 함수
-// const animals = ["lion", "bear", "bird"];
-// console.log(animals);
+const animals = ["lion", "bear", "bird"];
+console.log(animals);
 
-// console.log(animals.pop());
-// animals.pop();
-// console.log(animals); // pop() 배열의 뒤쪽에서 부터 값을 제거한다
-// animals.push("tiger");
-// console.log(animals); //push() 배열의 뒤쪽에서 부터 값을 넣어준다
+console.log(animals.pop());
+animals.pop();
+console.log(animals); // pop() 배열의 뒤쪽에서 부터 값을 제거한다
+animals.push("tiger");
+console.log(animals); //push() 배열의 뒤쪽에서 부터 값을 넣어준다
 
 // // 5.shift(), unshift() : 배열 안에 맨 앞쪽부터 값을 제거하거나 혹은 추가하고자 할때 사용가능한 메서드 함수
 
-// animals.shift();
-// console.log(animals); //shift() 배열의 앞쪽에서 부터 값을 제거한다
-// animals.unshift("dog");
-// console.log(animals); //unshift() 배열의 앞쪽에서부터 값을 넣어준다
+animals.shift();
+console.log(animals); //shift() 배열의 앞쪽에서 부터 값을 제거한다
+animals.unshift("dog");
+console.log(animals); //unshift() 배열의 앞쪽에서부터 값을 넣어준다
 
-//6.splice() : 배열 내 특정 위치에 있는 아이템 값을 추가하거나 제거하고자 할 때 사용가능한 메서드 함수
+// 6.splice() : 배열 내 특정 위치에 있는 아이템 값을 추가하거나 제거하고자 할 때 사용가능한 메서드 함수
 //splice(위치,개수)
 
 const subjects = ["html", "css", "js", "ts", "react"];
@@ -132,6 +134,8 @@ const subjects = ["html", "css", "js", "ts", "react"];
 
 // const test = subjects.splice(2, 2);
 // console.log(test);
+subjects.splice(2, 2);
+console.log(subjects);
 subjects.splice(2);
 console.log(subjects); //
 // splice는 해당위치를 포함해서 몇개를 제거하는 역할을 한다 (원본배열의 값을 바꾼다)

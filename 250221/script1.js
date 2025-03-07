@@ -10,3 +10,7 @@ const string = prompt("영문  소문자로 된 문자열을 입력해주세요"
 
 const result = [string[0].toUpperCase(), ...string.slice(1)].join("");
 document.write(result);
+
+// concat은 여러 문자열을 한번에 연결할 때 더 유리하다
+// 문자열과 문자열을  하나만 열결 할때는 + 연산자를 많이 사용한다\
+// 문자열과 문자열을 더하는 것  ...,concat(),+
