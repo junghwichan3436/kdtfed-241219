@@ -38,6 +38,20 @@ body {
 }
 #container #toolbar > div * {
   margin-right: 5px;
+  cursor: pointer;
+}
+#container label {
+  font-size: 1.8rem;
+}
+#container input[type=number] {
+  padding: 4px 8px;
+}
+#container button {
+  background: #ececec;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
 }
 
 canvas {
