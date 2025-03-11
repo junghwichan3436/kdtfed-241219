@@ -1,7 +1,7 @@
 const button = document.querySelector("button");
 const canvas = document.querySelector("canvas");
-
 const ctx = canvas.getContext("2d");
+
 const origin = {
   x: 200,
   y: 200,
@@ -16,9 +16,13 @@ const randomRGB = () => {
   const blue = Math.floor(Math.random() * 256);
   return `rgb(${red},${green},${blue})`;
 };
+// const randomRGB = () => {
+//   const red = "#f00";
+//   randomRGB(red);
+// };
 
 button.addEventListener("click", () => {
-  ctx.globalAlpha = "0.7"; //투명도를 설정하는 속성 globalAlpha
+  //   ctx.globalAlpha = "0.7"; //투명도를 설정하는 속성 globalAlpha
 
   ctx.translate(origin.x, origin.y);
   ctx.rotate((Math.PI / 180) * 30);

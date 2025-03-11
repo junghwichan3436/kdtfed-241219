@@ -19,12 +19,15 @@ const ctx = canvas.getContext("2d");
 // ctx.fillRect(10, 10, 100, 100);
 
 // ctx.fillStyle = "#f00";
-// ctx.fillRect(50, 50, 80, 20);
+// ctx.fillRect(10, 10, 80, 20);
 
 // ctx.restore();
 
 // ctx.fillStyle = "#ff0";
 // ctx.fillRect(100, 100, 200, 200);
+
+// ctx.strokeStyle = "#f00";
+// ctx.strokeRect(10, 10, 50, 50);
 
 // ---------------------------------------------------
 
@@ -38,7 +41,6 @@ const ctx = canvas.getContext("2d");
 // ctx.strokeRect(0, 0, 100, 100);
 
 // ctx.translate(-150, -150);
-
 // ctx.restore();
 
 // --------------------------------
