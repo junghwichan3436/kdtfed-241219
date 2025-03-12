@@ -1,4 +1,4 @@
-const tl = AnimationEffect.timeline({
+const tl = anime.timeline({
   easing: "linear",
   duration: 1000,
 });
@@ -6,13 +6,15 @@ const tl = AnimationEffect.timeline({
 tl.add({
   targets: ".circle1",
   translateX: 500,
+  translateY: 500,
 })
   .add({
     targets: ".circle1",
+    translateX: 0,
     translateY: 0,
   })
   .add({
-    targets: ".circle1",
+    targets: ".circle2",
     rotate: 360,
     borderRadius: 0,
     scale: 1.5,

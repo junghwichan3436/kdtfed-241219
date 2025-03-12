@@ -7,5 +7,5 @@ anime({
   duration: 10000,
   delay: anime.stagger(250),
   loop: true,
-  direction: "alternate",
+  direction: "alternate", //그렸다가 다시지우는 반복 애니메이션
 });
