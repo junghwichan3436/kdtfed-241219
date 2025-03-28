@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--체크박스는 뒤에 name태그가 다달라야한다
+    라디오 name태그는 뒤에가 같아야한다-->
+    <form action="http://127.0.0.1:5500/index07.html" method="get">
+      <input type="text" name="search" />
+      <input type="file" />
+      <input type="button" value="나는 버튼이야" /><br />
+      <h4>당신이 좋아하는 스포츠를 선택해주세요(복수선택가능)</h4>
+      <input type="checkbox" name="sports1" />축구
+      <input type="checkbox" name="sports2" />배구
+      <input type="checkbox" name="sports3" />야구
+      <input type="checkbox" name="sports4" />격투기
+      <input type="checkbox" name="sports5" />농구
+      <input type="checkbox" name="sports6" />족구<br />
+      <h4>당신의 성별은?</h4>
+      <input id="female" type="radio" name="gender" /><label for="female"
+        >여자</label
+      >
+      <input id="male" type="radio" name="gender" />
+      <label for="male">남자</label><br />
+      <input type="submit" value="검색" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+.body {
+  background: #f00;
+  color: #fff;
+}
+/* css처럼 하면 된다 */
+
+#test {
+  background: crimson;
+}

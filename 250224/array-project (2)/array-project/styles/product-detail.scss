@@ -1,0 +1,47 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #kakaotalk-sharing-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(100px, 150px);
+    z-index: 3;
+    border: 1px solid #f00;
+    cursor: pointer;
+  }
+  #product-detail {
+    width: 600px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // border: 1px solid #f00;
+    .product-category {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 18px;
+    }
+    .procuct-img {
+      margin-bottom: 50px;
+    }
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+}

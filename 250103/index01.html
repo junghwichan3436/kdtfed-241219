@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="./style01.css" /> -->
+  <title>Document</title>
+  <style>
+    /*reset css*/
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    /* h1 {
+      background-color: crimson; */
+    p {
+      color: brown;
+      &#special {
+        color: dodgerblue;
+      }
+    }
+    /* 아이디선택자 */
+    /* li {
+      &#second {
+        background-color: aqua;
+      }
+      &#fourth {
+        background-color: aquamarine;
+      } */
+    /* } */
+    /* class 선택자 */
+    .bgStyle {
+      background-color: aqua;
+    }
+    /* 속성선택자
+    input {
+      &[type="text"] {
+        background: crimson;
+      }
+      &[type="password"] {
+        background: dodgerblue;
+      }
+    } */
+    /* 후손 자손 선택자 */
+    #header {
+      /* #header {
+      h1 {
+        color: brown;
+      }
+    } */
+      & > h1 {
+        color: brown;
+      }
+    }
+    /* 동위 선택자 */
+    #listEx {
+      #firstli + li {
+        color: crimson;
+      }
+      #firstli ~ li {
+        font-size: 30px;
+      }
+    }
+    /* 반응 선택자 */
+    h3:hover {
+      color: aqua;
+    }
+    h3:active {
+      color: crimson;
+    }
+    /* h3 {
+      &:hover {
+        color: aqua;
+      }
+      &:active {
+        color: crimson;
+      }
+    } */
+    /* 상태선택자 */
+    input {
+      &:enabled {
+        background: greenyellow;
+      }
+      &:disabled {
+        background: gainsboro;
+      }
+      &:focus {
+        background: tomato;
+      }
+    }
+  </style>
+  <body>
+    <!-- <h1 style="color: crimson">오늘은 신나는 금요일</h1> -->
+    <h1>오늘은 신나는 금요일</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolore
+      qui sequi odit eius, doloribus nesciunt modi corporis totam soluta, autem
+      quidem porro deleniti? Nulla aliquam ipsam nesciunt illum debitis.
+    </p>
+    <p id="special">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum dolorum
+      veniam quibusdam. Libero earum, magnam iusto eius modi debitis qui! Nobis
+      magnam optio saepe blanditiis nihil recusandae quae id earum. Nisi itaque
+      eveniet quo nam voluptatem iste tenetur, accusamus illo magni non culpa
+      corporis iusto cupiditate incidunt voluptatibus harum inventore deserunt
+      blanditiis repellat! Eius repellendus exercitationem eos adipisci nulla
+      recusandae. Sint velit nostrum earum commodi autem asperiores omnis
+      reiciendis quasi voluptates debitis atque reprehenderit, a voluptatum at
+      id nesciunt dolore illo est in, provident neque sed exercitationem quia
+      hic? Ullam. Neque numquam velit accusamus repellat esse quae, rem culpa
+      quasi voluptatibus illum recusandae aliquam cum alias nam minus provident
+      voluptate inventore, veritatis consequuntur praesentium ab repudiandae ea
+      voluptates ipsam. Molestias.
+    </p>
+    <!-- id선택자 -->
+    <ul>
+      <li>첫번째</li>
+      <li id="second">두번째</li>
+      <li>세번째</li>
+      <li id="fourth">네번째</li>
+    </ul>
+    <!-- 클래스 선택자 -->
+    <ul>
+      <li>첫번째</li>
+      <li class="bgStyle">두번째</li>
+      <li>세번째</li>
+      <li class="bgStyle">네번째</li>
+    </ul>
+    <ul id="listEx">
+      <li id="firstli">첫번째</li>
+      <li>두번째</li>
+      <li>세번째</li>
+      <li>네번째</li>
+    </ul>
+    <hr />
+    <!-- 속성선택자 -->
+    <form action="">
+      <input type="text" name="" id="" /><input type="password" name="" id="" />
+    </form>
+    <hr />
+    <div id="header">
+      <h1 class="title">lorem ipsum</h1>
+      <div id="nav">
+        <h1>Navigation</h1>
+      </div>
+    </div>
+    <h3>User Action Selector</h3>
+    <hr />
+    <form action="">
+      <h2>Enaled</h2>
+      <input type="text" name="enabled" id="enabled" enabled />
+      <h2>Disabled</h2>
+      <input type="text" name="disabled" id="disabled" disabled />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", //타입스크립트 파일을 자바스크립트로 컴파일리을 하는 데, 어떤 모율 버전으로 컴파일링 할지 결정해주는 옵션
+    //대부분의 다른 옵션들을 compilerOptions안에 쓰지만 include는 특별하게 밖에 쓸수 있다
+    //ESNext 현존하는 문법중 최신버전을 쓰겠다
+    "module": "NodeNext",
+    "moduleDetection": "force",
+    "moduleResolution": "nodenext",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src"] //컴파일링하고 자하는 파일의 위치가 어딨냐
+}

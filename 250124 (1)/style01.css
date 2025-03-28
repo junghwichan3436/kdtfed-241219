@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+body .complete {
+  width: 150px;
+  height: 100%;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border: 3px solid #dc143c;
+  color: #dc143c;
+}
+body .complete.complete:hover {
+  background: #dc143c;
+  color: #ffffff;
+}
+body .complete.loading:hover {
+  background: #4169e1;
+  color: #ffffff;
+}
+body .complete.error:hover {
+  background: #008000;
+  color: #ffffff;
+}
+body .loading {
+  width: 150px;
+  height: 100%;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border: 3px solid #4169e1;
+  color: #4169e1;
+}
+body .loading.complete:hover {
+  background: #dc143c;
+  color: #ffffff;
+}
+body .loading.loading:hover {
+  background: #4169e1;
+  color: #ffffff;
+}
+body .loading.error:hover {
+  background: #008000;
+  color: #ffffff;
+}
+body .error {
+  width: 150px;
+  height: 100%;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border: 3px solid #008000;
+  color: #008000;
+}
+body .error.complete:hover {
+  background: #dc143c;
+  color: #ffffff;
+}
+body .error.loading:hover {
+  background: #4169e1;
+  color: #ffffff;
+}
+body .error.error:hover {
+  background: #008000;
+  color: #ffffff;
+}

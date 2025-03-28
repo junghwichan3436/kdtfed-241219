@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .wrapper {
+        border: 1px solid red;
+        display: grid;
+        justify-items: center;
+        grid-template-areas: "item item item item item item";
+        grid-gap: 10px;
+        div {
+          width: 100%;
+          background: aqua;
+          padding: 10px;
+          text-align: center;
+          &:nth-child(1) {
+            grid-area: item;
+          }
+        }
+        footer {
+          background: aqua;
+          width: 100%;
+          text-align: center;
+          grid-row: 3 /;
+          grid-column: 1/7;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div>header</div>
+      <div>menu</div>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>top</div>
+      <div>aside</div>
+      <div>bottom</div>
+      <footer>footer</footer>
+    </main>
+  </body>
+</html>

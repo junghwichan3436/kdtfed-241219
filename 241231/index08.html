@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      textarea {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+        <!--체크박스는 뒤에 name태그가 다달라야한다
+    라디오 name태그는 뒤에가 같아야한다-->
+    <form action="#" method="post">
+      <fieldset>
+        <legend><b>신청과목</b></legend>
+        <p>
+          이 달에 신청할 과목을 선택하세요! (*1과목만 선택가능)<p/>
+          <!-- (label>input:radio#english0$)*3 -->
+          <label for="english01"
+            ><input type="radio" name="subject" id="english01" />회화</label
+          ><label for="english02"
+            ><input type="radio" name="subject" id="english02" />문법</label
+          ><label for="english03"
+            ><input type="radio" name="subject" id="english03" />작문</label
+          >
+      </form>
+      </fieldset>
+    <form action="#" method="post">
+      <fieldset>
+        <legend><b>신청과목</b></legend>
+        <p>
+          이 달에 신청할 과목을 선택하세요! (복수 선택가능)<p/>
+          <!-- (label>input:radio#english0$)*3 -->
+          <label for="news01"
+            ><input type="checkbox" name="news01" id="news01" />회화</label
+          ><label for="news02"
+            ><input type="checkbox" name="news02" id="news02" />문법</label
+          ><label for="news03"
+            ><input type="checkbox" name="news03" id="news03" />작문</label
+          >
+        </fieldset>
+        <p>하고 싶은 이야기</p>
+        <textarea name="mystory"
+        id="mystory" 
+        placeholder="당신의 이야기"
+        rows="10"
+        cols="50"
+        ></textarea>
+        <br>
+        <h4>오늘 저녁 분식은 어떠세요?</h4>
+        <select name="food" id="food">
+          <option value="none" selected disabled>원하시는 메뉴를 선택해주세요</option>
+          <option value="food01">김밥</option>
+          <option value="food02">떡볶이</option>
+          <option value="food03">순대</option>
+          <option value="food04">붕어빵</option>
+        </select>
+      </form>
+
+  </body>
+</html>
