@@ -8,11 +8,11 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 30px;
+  align-items: flex-start;
+  padding: 50px;
   gap: 20px;
   border-radius: 16px;
-  box-shadow: 4px 8px 8px raba(0, 0, 0, 0.6);
+  box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.6);
 `;
 
 const City = styled.h1`
@@ -30,7 +30,7 @@ const Desc = styled.h3`
 
 const WeatherBox = ({ weather }) => {
   let cityName = "";
-  switch (weather?.name) {
+  switch (weather && weather?.name) {
     case "Jamwon-dong":
       cityName = "서울시 서초구";
       break;
@@ -43,25 +43,35 @@ const WeatherBox = ({ weather }) => {
     case "Tokyo":
       cityName = "일본 도쿄";
       break;
-    case "Osan":
-      cityName = "경기도 오산";
+    case "Seoul":
+      cityName = "대한민국 서울";
       break;
   }
 
   let weatherMain = "";
-  switch (weather?.weather[0].main) {
+  switch (weather && weather.weather ? weather?.weather[0]?.main : "") {
     case "Clouds":
-      weatherMain = "오늘 날씨구름";
+      weatherMain = "오늘 날씨 구름";
+      break;
+    case "Clear":
+      weatherMain = "오늘 날씨 맑음";
+      break;
+    case "Mist":
+      weatherMain = "오늘 날씨 안개";
+      break;
+    case "Haze":
+      weatherMain = "오늘 날씨 미세안개";
       break;
   }
 
   return (
     <Container>
-      <City>도시 : {weather?.name}</City>
+      <City>🏘️ 도시 : {cityName}</City>
       <Weather>
-        온도 : {weather?.main.temp}도 | 습도 : {weather?.main.humidity}%
+        🦄 온도 : {weather && weather.main ? weather?.main.temp : ""} ℃ | 습도 :{" "}
+        {weather && weather?.main?.humidity} %
       </Weather>
-      <Desc>현재날씨, :{weather?.weather[0].main}</Desc>
+      <Desc>🌈 현재날씨 : {weatherMain}</Desc>
     </Container>
   );
 };
