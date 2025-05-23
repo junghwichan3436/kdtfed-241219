@@ -1,0 +1,7 @@
+/* css를 module로 바꾸어 주어야한다 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

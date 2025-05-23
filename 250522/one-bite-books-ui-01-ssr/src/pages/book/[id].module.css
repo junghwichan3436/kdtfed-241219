@@ -1,0 +1,45 @@
+.cover_img_container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  & > img {
+    max-height: 350px;
+    height: 100%;
+    z-index: 1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.subTitle {
+  margin: 4px 0 8px;
+}
+
+.author {
+  color: var(--border-color);
+}
+
+.description {
+  margin-top: 8px;
+  font-size: 1.3rem;
+  background: var(--border-color);
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1.5;
+}

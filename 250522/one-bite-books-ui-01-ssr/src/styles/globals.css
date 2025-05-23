@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background: var(--background-color);
+}
+
+:root {
+  --light-color: #fff;
+  --dark-color: #000;
+  --border-color: #ccc;
+  --accent-color: #dc143c;
+  --background-color: #fafafa;
+  --footer-color: #808080;
+}
