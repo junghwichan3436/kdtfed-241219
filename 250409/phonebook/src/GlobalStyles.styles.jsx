@@ -1,35 +1,36 @@
-import React from 'react'
-import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
-const GllobalStyles = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   ${reset}
 
-  *{
+  * {
     box-sizing: border-box;
   }
 
-  ul,li {
+  ul, li {
     list-style: none;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
 
   :root {
-    --light-color:#fff;
-    --dark-color:#000;
-    --border-color:#ccc;
-    --accent-color:#dc143c;
+    --light-color: #fff;
+    --dark-color: #000;
+    --border-color: #ccc;
+    --accent-color: #dc143c;
   }
-`
 
-const GlobalStyles.styles = () => {
-  return (
-    <div>GlobalStyles.styles</div>
-  )
-}
+  html {
+    font-size: 62.5%;
+  }
 
-export default GlobalStyles.styles
+  body {
+    font-size: 1.6rem;
+  }
+`;
+
+export default GlobalStyles;
