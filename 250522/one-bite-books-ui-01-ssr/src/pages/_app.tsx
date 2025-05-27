@@ -1,4 +1,4 @@
-import { Component, ReactNode } from "react";
+import { ReactNode } from "react";
 import "@/styles/globals.css";
 import { NextPage } from "next";
 import type { AppProps } from "next/app";

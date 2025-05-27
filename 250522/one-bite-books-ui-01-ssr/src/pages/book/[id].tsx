@@ -2,6 +2,7 @@ import React from "react";
 import style from "./[id].module.css";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import fetchOneBook from "@/lib/fetch-one-book";
+import Head from "next/head";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -19,8 +20,7 @@ const Book = ({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   if (!book) return "문제가 발생했습니다. 다시 시도하세요!";
   //유니온 타입의 문제가 생겼을 때 타입 단언 , 타입 가드를 써준다
-  const { id, title, subTitle, description, author, publisher, coverImgUrl } =
-    book;
+  const { title, subTitle, description, author, publisher, coverImgUrl } = book;
   // const {
   //   query: { id },
   // } = useRouter();
@@ -28,20 +28,28 @@ const Book = ({
   // console.log(router);
 
   return (
-    <div>
-      <div
-        className={style.cover_img_container}
-        style={{ backgroundImage: `url("${coverImgUrl}")` }}
-      >
-        <img src={coverImgUrl} />
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta property="or:imgae" content={coverImgUrl} />
+        <meta property="op:title" content={title} />
+        <meta property="og:description" content={description} />
+      </Head>
+      <div>
+        <div
+          className={style.cover_img_container}
+          style={{ backgroundImage: `url("${coverImgUrl}")` }}
+        >
+          <img src={coverImgUrl} />
+        </div>
+        <div className={style.title}>{title}</div>
+        <div className={style.subTitle}>{subTitle}</div>
+        <div className={style.author}>
+          {author} | {publisher}
+        </div>
+        <div className={style.description}>{description}</div>
       </div>
-      <div className={style.title}>{title}</div>
-      <div className={style.subTitle}>{subTitle}</div>
-      <div className={style.author}>
-        {author} | {publisher}
-      </div>
-      <div className={style.description}>{description}</div>
-    </div>
+    </>
   );
 };
 
