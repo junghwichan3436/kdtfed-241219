@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import Searchbar from "../../components/searchbar";
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div>임시서치바</div>
+      <Searchbar />
       {children}
       {/*{children} 을 씀으로써 자식요소로 받는다 search 페이지들을 */}
     </>
