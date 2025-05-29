@@ -1,4 +1,19 @@
+import { notFound } from "next/navigation";
 import style from "./page.module.css";
+// import Image from "next/image";
+
+export const dynamic = "force-dynamic"; //강제로 동적인 페이지를 만든다
+
+//> 아래 Route Segment option 은 가급적 사용 지양
+//> !important
+// 1. auto : 그냥 컴포넌트 페이지가 기본적으로 가지고 있는 속성을 자동으로 진행
+//2. force-dynamic : 해당 컴포넌트 페이지를 동적 페이지로 강제
+// 3. froce-dynamic : 해당 컴포넌트 페이지를 정적 페이지로 강제
+//4. error : 만약 특정 컴포넌트 페이지의 옵션을 강제 했을 때, 에러가 발생한다면, 해당 에러를 출력
+
+export const generateStaticParams = () => {
+  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+}; //dynamic한 페이지였는데 static한 페이지로 만들었다 generateStaticParams를 써서
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
@@ -7,6 +22,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   );
 
   if (!response.ok) {
+    if (response.status === 404) {
+      notFound();
+    }
     return <div>오류가 발생하였습니다...</div>;
   }
 
@@ -19,6 +37,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         className={style.cover_img_container}
         style={{ backgroundImage: `url("${coverImgUrl}")` }}
       >
+        {/* <Image src={coverImgUrl} alt={title} /> */}
         <img src={coverImgUrl} alt={title} />
       </div>
       <div className={style.title}>{title}</div>

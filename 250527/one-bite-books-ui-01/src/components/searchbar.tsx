@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import style from "./searchbar.module.css";
 
@@ -23,25 +23,25 @@ const Searchbar = () => {
     router.push(`/search?q=${search}`);
   };
 
-  const onKeyDown = () => {
-    (e: React.KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === "Enter") {
-        onSubmit();
-      }
-    };
+  const onKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSubmit();
+    }
   };
   //form태그를 안쓰고 onkeyDown 과 onSubmit 을 썻다
   return (
-    <div className={style.container}>
-      <input
-        type="text"
-        value={search}
-        onChange={onChangeSearch}
-        onKeyDown={onKeyDown}
-      />
-      <input onClick={onSubmit} type="submit" value="검색" />
-      {/* <button>검색</button> */}
-    </div>
+    <Suspense>
+      <div className={style.container}>
+        <input
+          type="text"
+          value={search}
+          onChange={onChangeSearch}
+          onKeyDown={onKeyDown}
+        />
+        <input onClick={onSubmit} type="submit" value="검색" />
+        {/* <button>검색</button> */}
+      </div>
+    </Suspense>
   );
 };
 
