@@ -5,7 +5,6 @@ import style from "./page.module.css";
 import type { BookData } from "@/types";
 import delay from "@/util/delay";
 import { Suspense } from "react";
-import BookItemSkeleton from "@/components/skeleton/book-item-skeleton";
 import BookListSkeleton from "@/components/skeleton/book-list-skeleton";
 
 //> 아래 Route Segment option 은 가급적 사용 지양
@@ -68,7 +67,7 @@ const RecoBooks = async () => {
   );
 };
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 const Home = async () => {
   return (

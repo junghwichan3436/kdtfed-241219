@@ -42,11 +42,13 @@ import React from "react";
 import "./globals.css";
 import style from "./layout.module.css";
 import Link from "next/link";
-import type { BookData } from "@/types";
 
 const Footer = async () => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book`,
+    {
+      cache: "force-cache",
+    }
   );
 
   if (!response.ok) {
@@ -73,7 +75,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
             <Link href={"/"}>📚 ONEBITE BOOKS</Link>
           </header>
           <main>{children}</main>
-          <footer>푸터</footer>
+          <footer>제작 Hwichan</footer>
         </div>
       </body>
     </html>

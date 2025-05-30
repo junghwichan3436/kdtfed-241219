@@ -1,24 +1,20 @@
 import { notFound } from "next/navigation";
 import style from "./page.module.css";
+import type { ReviewData } from "@/types";
+import ReviewItem from "@/components/review-item";
+import ReviewEditor from "@/components/review-editor";
 // import Image from "next/image";
 
-export const dynamic = "force-dynamic"; //강제로 동적인 페이지를 만든다
+// export const dynamic = "force-dynamic"; //강제로 동적인 페이지를 만든다
 
-//> 아래 Route Segment option 은 가급적 사용 지양
-//> !important
-// 1. auto : 그냥 컴포넌트 페이지가 기본적으로 가지고 있는 속성을 자동으로 진행
-//2. force-dynamic : 해당 컴포넌트 페이지를 동적 페이지로 강제
-// 3. froce-dynamic : 해당 컴포넌트 페이지를 정적 페이지로 강제
-//4. error : 만약 특정 컴포넌트 페이지의 옵션을 강제 했을 때, 에러가 발생한다면, 해당 에러를 출력
-
-export const generateStaticParams = () => {
-  return [{ id: "1" }, { id: "2" }, { id: "3" }];
-}; //dynamic한 페이지였는데 static한 페이지로 만들었다 generateStaticParams를 써서
-
-const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params;
+const Booktail = async ({ bookId }: { bookId: string }) => {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/${id}`
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/book/${bookId}`,
+    {
+      next: {
+        tags: [`review-${bookId}`],
+      },
+    }
   );
 
   if (!response.ok) {
@@ -32,7 +28,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   const { title, subTitle, description, author, publisher, coverImgUrl } = book;
   return (
-    <div className={style.container}>
+    <section>
       <div
         className={style.cover_img_container}
         style={{ backgroundImage: `url("${coverImgUrl}")` }}
@@ -46,6 +42,50 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         {author} | {publisher}
       </div>
       <div className={style.description}>{description}</div>
+    </section>
+  );
+};
+
+const ReviewList = async ({ bookId }: { bookId: string }) => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_SERVER_URL}/review/book/${bookId}`,
+    {
+      next: {
+        tags: [`review-${bookId}`],
+      },
+    }
+    // {
+    //   cache: "force-cache",
+    // }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Review fetch failed : ${response.statusText}`);
+  }
+
+  const reviews: ReviewData[] = await response.json();
+
+  return (
+    <section>
+      {reviews.map((review) => (
+        <ReviewItem key={`review-item-${review.id}`} {...review} />
+      ))}
+    </section>
+  );
+};
+
+export const generateStaticParams = () => {
+  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+}; //dynamic한 페이지였는데 static한 페이지로 만들었다 generateStaticParams를 써서
+
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  // const { id } = await params;
+  return (
+    <div className={style.container}>
+      {/* <Booktail bookId={id} /> */}
+      <Booktail bookId={(await params).id} />
+      <ReviewEditor bookId={(await params).id} />
+      <ReviewList bookId={(await params).id} />
     </div>
   );
 };
