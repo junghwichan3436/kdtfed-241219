@@ -1,0 +1,10 @@
+doctype html 
+html(lang="ko") 
+  head 
+    title #{pageTitle} | Youtube
+    //- 문자열과 변수를 같이쓰고 싶으면 절대 등호표시하면 안됨
+      //- =를 쓰면 값을 하나밖에 못받는다
+    body 
+      block content 
+    //- content라는 이름을 갖고 있는 애는 이곳을 블락킹 할 수 있다
+    include partials/footer.pug
