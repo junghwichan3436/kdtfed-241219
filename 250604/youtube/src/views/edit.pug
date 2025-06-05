@@ -1,0 +1,9 @@
+extends base.pug
+
+block content 
+  h4 Change Title of Video
+  form( method="POST") 
+    input(name="title" placeholder="Video Title", value=video.title,required)
+    input(type="submit" value="Save")
+  //- 절대경로 값으로 /save-change 를 넣겠다
+  //- 원래는 preventDefault값을 넣었었는데 이번에는 서버로 가야하니까 preventDefault값을 넣지 않았다

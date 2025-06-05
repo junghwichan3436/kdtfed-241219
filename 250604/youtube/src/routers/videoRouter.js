@@ -1,5 +1,11 @@
 import express from "express";
-import { see, edit, upload, deleteVideo } from "../controllers/videoController";
+import {
+  watch,
+  getEdit,
+  deleteVideo,
+  upload,
+  postEdit,
+} from "../controllers/videoController";
 
 const videoRouter = express.Router();
 
@@ -11,8 +17,11 @@ const videoRouter = express.Router();
 // };
 
 videoRouter.get("/upload", upload); //독립적인 값이 항상 최상위로 와야한다
-videoRouter.get("/:id", see); //아이디가 숫자라는 것을 알려주면 굳이 /upload를 위로 뺄 필요가 없다!!
-videoRouter.get("/:id/edit", edit);
+videoRouter.route("/:id").get(watch); //아이디가 숫자라는 것을 알려주면 굳이 /upload를 위로 뺄 필요가 없다!!
+// videoRouter.get("/:id/edit", getEdit);
+// videoRouter.post("/:id/edit", postEdit);
+//메서드체이닝 기법으로 적었다
+videoRouter.route("/:id/edit").get(getEdit).post(postEdit);
 videoRouter.get("/:id/deleteVideo", deleteVideo);
 
 export default videoRouter;

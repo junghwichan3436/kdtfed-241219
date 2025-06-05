@@ -1,10 +1,16 @@
-doctype html 
-html(lang="ko") 
-  head 
+doctype html
+html(lang="ko")
+  head
     title #{pageTitle} | Youtube
-    //- 문자열과 변수를 같이쓰고 싶으면 절대 등호표시하면 안됨
-      //- =를 쓰면 값을 하나밖에 못받는다
-    body 
-      block content 
-    //- content라는 이름을 갖고 있는 애는 이곳을 블락킹 할 수 있다
-    include partials/footer.pug
+    link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+  body
+    header
+      h1=pageTitle
+    main
+      block content
+      include partials/footer.pug
+    //- 문자열과 변수를 같이쓰고 싶으면 절대 등호표시하면 안됨 
+    //- =를 쓰면 값을 하나밖에 못받는다 
+      //-변수와 같이 쓰지 않는 다면 값하나만 쓰고 싶다면 = 표기를 써도 된다
+        //- 여기서 include는 값이항상 똑같기 때문에 mixin으로 뺄 필요도 없고 앞에만 include를 넣어주면 된다
+        //- content라는 이름을 갖고 있는 애는 이곳을 블락킹 할 수 있다
