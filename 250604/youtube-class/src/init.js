@@ -1,3 +1,4 @@
+// 서버
 import "dotenv/config";
 import "./db";
 import "./models/video";

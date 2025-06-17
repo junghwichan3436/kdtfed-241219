@@ -3,8 +3,8 @@ include mixins/video
 
 block content
   form(method="GET")
-    input(name="keyword" type="text" placeholder="Search By Title") 
-    input(type="submit" value="Search Now")
+    input(name="keyword" type="text" placeholder="Search By Title")
+    input(type="submit" value="Search Now") 
   each video in videos
     +video(video)
-    //- url뒤에 아이디값이 붙기 위해서는 input뒤에 name을 붙여야한다
+        //- url뒤에 아이디값이 붙기 위해서는 input뒤에 name을 붙여야한다

@@ -22,10 +22,10 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: false, //새로고침을 한다고 세션값을 저장하지 마라
     saveUninitialized: false, //들어왔다는 이유만으로 세션값을 초기화시키는걸 막아라 false
-    cookie: {
-      // maxAge: 20000, // 20초뒤에 세션값을 지운다
-    },
-    store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
+    // cookie: {
+    //   maxAge: 20000, // 20초뒤에 세션값을 지운다
+    // },
+    store: MongoStore.create({ mongoUrl: process.env.DB_URL }), //db
   })
 );
 
@@ -46,6 +46,7 @@ app.use(
 // });
 
 app.use(localMiddleware);
+app.use("/uploads", express.static("uploads")); // /uploads에 들어오게 된다면 uploads폴더 안에 값을 보여줘라
 app.use("/", rootRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);

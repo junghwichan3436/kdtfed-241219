@@ -1,3 +1,4 @@
+//데이터베이스
 import mongoose from "mongoose";
 
 mongoose.connect(process.env.DB_URL);
