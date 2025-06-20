@@ -1,7 +1,28 @@
 extends base.pug
 
 block content
-  video(src="/" + video.fileUrl controls)
+  div#videoContainer(data-id=video._id) 
+    video(src="/" + video.fileUrl)
+    div#videoControls.videoControls
+      //- button#play Play
+      //- button#mute Mute 
+      //- input(type="range" step="0.1" value="0.5" min="0" max="1")#volume
+      div.videoControls_play
+        span#play.videoControls_playBtn
+          i.fas.fa-play
+        div.videoControls_time
+          span#currentTime 00:00
+          span &nbsp;/&nbsp;
+          span#totalTime 00:00
+      div.videoControls_timeline
+        input(type="range" step="1" value="0" min="0")#timeline
+      div.videoControls_volume
+        input(type="range" step="0.1" value="0.5" min="0" max="1")#volume
+        span#mute
+          i.fas.fa-volume-high
+      div 
+        span#fullScreen 
+          i.fas.fa-expand
   div
     p=video.description
     small=video.createdAt
@@ -13,3 +34,6 @@ block content
     a(href=`${video.id}/edit`) Edit Video &rarr;
     br
     a(href=`${video.id}/delete`) Delete Video &rarr;
+
+block scripts 
+  script(src="/assets/js/videoPlayer.js") 

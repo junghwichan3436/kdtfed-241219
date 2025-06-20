@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre("save", async function () {
   if (this.isModified("password")) {
+    //password가 수정될 때만 해싱 시켜라
     this.password = await bcrypt.hash(this.password, 5); //this의 password 값을 찾아와서 5번 hashing한다
   }
 });

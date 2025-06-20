@@ -1,6 +1,8 @@
 extends base.pug
 
 block content
+  div
+    button#startBtn Start Recording
   if errorMessage
     span=errorMessage
   form(method="POST" enctype="multipart/form-data")
@@ -10,4 +12,6 @@ block content
     input(name="description" type="text" placeholder="Description" minlength=20 required)
     input(name="hashtags" type="text" placeholder="Hashtags, Separated by Comma" required)
     input(type="submit" value="Upload Video")
+block scripts 
+    script(src="/assets/js/recorder.js")
         //- 인코딩타입이 멀티 파트여야 upload파일로 갈 수 있다 enctype="multipart/form-data"

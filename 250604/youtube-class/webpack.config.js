@@ -1,13 +1,22 @@
+const { watch } = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/client/js/main.js", //이파일을 번들링 하겠다
+  //entry에 들어가고 output 에서 나온다
+  entry: {
+    //이파일을 번들링 하겠다
+    script: "./src/client/js/script.js",
+    videoPlayer: "./src/client/js/videoPlayer.js",
+    recorder: "./src/client/js/recorder.js",
+  },
   mode: "development",
+  watch: true, //nodemon이 작동가능하게 해준다
   plugins: [new MiniCssExtractPlugin({ filename: "css/style.css" })],
   output: {
-    filename: "js/script.js",
+    filename: "js/[name].js",
     path: path.resolve(__dirname, "assets"),
+    clean: true, //그 앞전 데이터를 깨끗하게 없애라
   },
   module: {
     //바벨과도 맞춰주기위한 모듈이 필요하다

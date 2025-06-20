@@ -1,9 +1,12 @@
+import { populate } from "dotenv";
 import User from "../models/user";
 import Video from "../models/video";
 
 export const home = async (req, res) => {
   try {
-    const videos = await Video.find({}).sort({ createdAt: "desc" }); // desc:내림차순 asc오름차순
+    const videos = await Video.find({})
+      .sort({ createdAt: "desc" }) // desc:내림차순 asc오름차순
+      .populate("owner");
     return res.render("home", { pageTitle: "Home", videos });
   } catch (error) {
     return res.render("Server-Error", { error });
@@ -75,7 +78,7 @@ export const search = async (req, res) => {
       // hashtags: {
       //   $regex: new RegExp(keyword, "gi"), //정규표현식 i를 써도 다 찾아오지만 gi를 쓰는 것이 정석이다
       // },
-    }); //user가 keyword를 적었다면
+    }).populate("owner"); //user가 keyword를 적었다면
   }
   return res.render("search", { pageTitle: "Search", videos });
 };
@@ -125,3 +128,17 @@ export const postUpload = async (req, res) => {
     });
   }
 };
+
+export const registerView = async (req, res) => {
+  //조회수 점검하기위한 함수
+  const { id } = req.params;
+  console.log(id);
+  const video = await Video.findById(id);
+  if (!video) {
+    return res.sendStatus(404); //status를 쓰는 경우 우리는 거의 render를 사용해 404페이지로 이동시켜 주었지만 여기서는 굳이 이동이 필요하지 않기 때문에 sendStatus라는 함수를 사용해서 그 페이지 자체를 404로 만들어 준다!!!
+  }
+  video.meta.views += 1;
+  await video.save();
+  return res.sendStatus(200);
+};
+//ended가 된다면 videoRouter에게 알려줘서 videoRouter는 videos의 meta의 view 값을 바꿔라

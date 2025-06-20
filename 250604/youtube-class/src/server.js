@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import apiRouter from "./routers/apiRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import rootRouter from "./routers/rootRouter";
@@ -47,8 +48,10 @@ app.use(
 
 app.use(localMiddleware);
 app.use("/uploads", express.static("uploads")); // /uploads에 들어오게 된다면 uploads폴더 안에 값을 보여줘라
+app.use("/assets", express.static("assets")); //static 특정폴더를 url로 이동할 수 있게 해준다
 app.use("/", rootRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
+app.use("/api", apiRouter);
 
 export default app;
