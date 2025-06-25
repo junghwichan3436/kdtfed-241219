@@ -12,7 +12,7 @@ const videoScheme = new mongoose.Schema({
 });
 
 const Video = mongoose.model("Video", videoScheme); //Video라는 DB(Youtube)안에 있는 테이블은 이러한 스키마형태로 들어와야한다는 것을 알려줌
-
 export default Video;
 
 // Video는 하나의 테이블이다
+//스키마 형태 로 들어오지않으면 데이터베이스가 튕겨나간다

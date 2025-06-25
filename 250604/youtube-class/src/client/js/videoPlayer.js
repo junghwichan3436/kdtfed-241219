@@ -149,6 +149,7 @@ const handleEnded = () => {
   const {
     dataset: { videoId },
   } = videoContainer;
+
   console.log(videoId);
 
   fetch(`/api/videos/${videoId}/view`, { method: "POST" });

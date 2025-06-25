@@ -1,0 +1,22 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "The Best way to watch videos",
+  "main": "index.js",
+  "scripts": {
+    "test": "https://github.com/junghwichan3436/youtube-reloaded.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junghwichan3436/youtube-reloaded.git"
+  },
+  "keywords": [
+    "Hwichan"
+  ],
+  "author": "Hwichan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/junghwichan3436/youtube-reloaded/issues"
+  },
+  "homepage": "https://github.com/junghwichan3436/youtube-reloaded#readme"
+}

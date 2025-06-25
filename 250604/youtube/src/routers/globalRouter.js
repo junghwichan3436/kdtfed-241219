@@ -1,5 +1,5 @@
 import express from "express";
-import { trending, search } from "../controllers/videoController";
+import { search, home } from "../controllers/videoController";
 import { join, login } from "../controllers/userController";
 
 const globalRouter = express.Router();
@@ -16,7 +16,7 @@ const globalRouter = express.Router();
 //   next();
 // };
 
-globalRouter.get("/", trending); // handlehome은 파이널웨어기도 하지만 컨트롤러 이기도 하다
+globalRouter.get("/", home); // handlehome은 파이널웨어기도 하지만 컨트롤러 이기도 하다
 globalRouter.get("/join", join);
 globalRouter.get("/login", login);
 globalRouter.get("/search", search);

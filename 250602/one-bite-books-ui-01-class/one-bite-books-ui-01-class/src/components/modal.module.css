@@ -1,0 +1,12 @@
+.modal {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 4px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}

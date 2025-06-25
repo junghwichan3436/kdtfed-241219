@@ -1,0 +1,12 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/@modal/(.)book/[id]/page": "app/@modal/(.)book/[id]/page.js",
+  "/book/[id]/page": "app/book/[id]/page.js",
+  "/parallel/@feed/setting/page": "app/parallel/@feed/setting/page.js",
+  "/(with-searchbar)/search/page": "app/(with-searchbar)/search/page.js",
+  "/parallel/@sidebar/page": "app/parallel/@sidebar/page.js",
+  "/parallel/@feed/page": "app/parallel/@feed/page.js",
+  "/parallel/page": "app/parallel/page.js",
+  "/(with-searchbar)/page": "app/(with-searchbar)/page.js"
+}

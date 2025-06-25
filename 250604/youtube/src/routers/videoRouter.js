@@ -3,8 +3,9 @@ import {
   watch,
   getEdit,
   deleteVideo,
-  upload,
   postEdit,
+  getUpload,
+  postUpload,
 } from "../controllers/videoController";
 
 const videoRouter = express.Router();
@@ -16,7 +17,7 @@ const videoRouter = express.Router();
 //   return res.send("Edit Video");
 // };
 
-videoRouter.get("/upload", upload); //독립적인 값이 항상 최상위로 와야한다
+videoRouter.route("/upload").get(getUpload).post(postUpload); //독립적인 값이 항상 최상위로 와야한다
 videoRouter.route("/:id").get(watch); //아이디가 숫자라는 것을 알려주면 굳이 /upload를 위로 뺄 필요가 없다!!
 // videoRouter.get("/:id/edit", getEdit);
 // videoRouter.post("/:id/edit", postEdit);

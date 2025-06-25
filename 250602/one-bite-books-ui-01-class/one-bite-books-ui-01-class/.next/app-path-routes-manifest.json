@@ -1,0 +1,12 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/_not-found/page": "/_not-found",
+  "/@modal/(.)book/[id]/page": "/(.)book/[id]",
+  "/book/[id]/page": "/book/[id]",
+  "/parallel/@feed/setting/page": "/parallel/setting",
+  "/(with-searchbar)/search/page": "/search",
+  "/parallel/@sidebar/page": "/parallel",
+  "/parallel/@feed/page": "/parallel",
+  "/parallel/page": "/parallel",
+  "/(with-searchbar)/page": "/"
+}
